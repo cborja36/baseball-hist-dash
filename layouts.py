@@ -1,7 +1,5 @@
 # Dash components, html, and dash tables
-import dash_core_components as dcc
-import dash_html_components as html
-import dash_table
+from dash import dcc, html, dash_table
 
 # Import Bootstrap components
 import dash_bootstrap_components as dbc
@@ -42,7 +40,6 @@ appMenu = html.Div([
                 xs={'size':'auto', 'offset':0}, sm={'size':'auto', 'offset':0}, md={'size':'auto', 'offset':0},
                 lg={'size':'auto', 'offset':0}, xl={'size':'auto', 'offset':0})
         ],
-        form=True,
     ),
     dbc.Row(dbc.Col(html.P(style={'font-size': '16px', 'opacity': '70%'},
         children='''For continuity, some teams historical names where changed to match '''
@@ -84,7 +81,7 @@ teamLayout = html.Div([
             # Pie Chart, % of Completed Games, Shutouts, and Saves of Total Games played
             dbc.Col(dcc.Graph(id='pitch-pie', config={'displayModeBar': False}), xs={'size':12, 'offset':0}, sm={'size':12, 'offset':0}, md={'size': 12, 'offset': 0},lg={'size': 6, 'offset': 0}),
         ],
-        no_gutters=True,
+        class_name='g-0',
     ),
 ],className='app-page')
 
@@ -105,7 +102,7 @@ playerMenu = html.Div([
                 ), xs={'size':'auto', 'offset':0}, sm={'size':'auto', 'offset':0}, md={'size':'auto', 'offset':0}, lg={'size':'auto', 'offset':0},
                 xl={'size':'auto', 'offset':0})),
         ],
-        no_gutters=True,
+        class_name='g-0',
     ),
     html.Br(),
     dbc.Row(dbc.Col(dash_table.DataTable(
@@ -168,7 +165,7 @@ battingLayout = html.Div([
             # Line/Bar Chart of Slugging Average, features; 2B 3B HR
             dbc.Col(dcc.Graph(id='slg-line', config={'displayModeBar': False}), xs={'size':12, 'offset':0}, sm={'size':12, 'offset':0}, md={'size': 12, 'offset': 0},lg={'size': 6, 'offset': 0})
         ],
-        no_gutters=True,
+        class_name='g-0',
     ),
     # Line Chart of OPS, Features; OBP SLG
     dbc.Row(dbc.Col(dcc.Graph(id='ops-line', config={'displayModeBar': False}), xs={'size':12, 'offset':0}, sm={'size':12, 'offset':0},
@@ -216,7 +213,7 @@ fieldingLayout = html.Div([
                 ), xs={'size':'auto', 'offset':0}, sm={'size':'auto', 'offset':0}, md={'size':'auto', 'offset':0}, lg={'size':'auto', 'offset':0},
                 xl={'size':'auto', 'offset':0})),
         ],
-        no_gutters=True,
+        class_name='g-0',
     ),
     dbc.Row(dbc.Col(html.H4(children='Pitching Performance'))),
     # Pitching and Fielding graphs, Pitching graphs are set in a subplot dcc.Graph(id='field-graphs', config={'displayModeBar': False})
@@ -252,7 +249,7 @@ projMenu = html.Div([
                 ), xs={'size':'auto', 'offset':0}, sm={'size':'auto', 'offset':0}, md={'size':'auto', 'offset':0}, lg={'size':'auto', 'offset':0},
                 xl={'size':'auto', 'offset':0}))
         ],
-        no_gutters=True,
+        class_name='g-0',
     ),
     html.Br(),
     dbc.Row(dbc.Col(html.H3(children='Player Profile and Statistics'))),
@@ -269,7 +266,7 @@ projMenu = html.Div([
                 ), xs={'size':'auto', 'offset':0}, sm={'size':'auto', 'offset':0}, md={'size':'auto', 'offset':0}, lg={'size':'auto', 'offset':0},
                 xl={'size':'auto', 'offset':0})),
         ],
-        no_gutters=True,
+        class_name='g-0',
     ),
     html.Br(),
     dbc.Row(dbc.Col(dash_table.DataTable(
@@ -364,7 +361,7 @@ projLayout = html.Div([
     #         # Line/Bar Chart of Slugging Average, features; 2B 3B HR
     #         dbc.Col(dcc.Graph(id='slg-line', config={'displayModeBar': False}), xs={'size':12, 'offset':0}, sm={'size':12, 'offset':0}, md={'size': 12, 'offset': 0},lg={'size': 6, 'offset': 0})
     #     ],
-    #     no_gutters=True,
+    #     class_name='g-0',
     # ),
     # # Line Chart of OPS, Features; OBP SLG
     # dbc.Row(dbc.Col(dcc.Graph(id='ops-line', config={'displayModeBar': False}), xs={'size':12, 'offset':0}, sm={'size':12, 'offset':0},

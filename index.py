@@ -1,7 +1,6 @@
 # import dash-core, dash-html, dash io, bootstrap
-import dash_core_components as dcc
-import dash_html_components as html
-from dash.dependencies import Input, Output
+import dash 
+from dash import dcc, html, Input, Output
 
 # Dash Bootstrap components
 import dash_bootstrap_components as dbc
@@ -113,4 +112,4 @@ def render_page_content(pathname):
 # Call app server
 if __name__ == '__main__':
     # set debug to false when deploying app
-    app.run_server(debug=True)
+    app.run_server(debug=True, port=8051)

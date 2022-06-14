@@ -1,13 +1,10 @@
 # import dash IO and graph objects
-from dash.dependencies import Input, Output
+from dash import Input, Output, html, dcc, dash_table
 # Plotly graph objects to render graph plots
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 # Import dash html, bootstrap components, and tables for datatables
-import dash_html_components as html
 import dash_bootstrap_components as dbc
-import dash_core_components as dcc
-import dash_table
 
 # Import app
 from app import app
